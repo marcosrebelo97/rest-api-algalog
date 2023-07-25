@@ -31,6 +31,8 @@ public class Entrega {
     @ManyToOne
     private Cliente cliente;
 
+    @NotNull
+    @Valid
     @Embedded
     private Destinatario destinatario;
 
