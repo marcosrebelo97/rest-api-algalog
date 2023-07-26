@@ -2,6 +2,7 @@ package com.algaworks.algalog.api.controller;
 
 import com.algaworks.algalog.api.dto.DestinatarioDTO;
 import com.algaworks.algalog.api.dto.EntregaDTO;
+import com.algaworks.algalog.api.mapper.EntregaMapper;
 import com.algaworks.algalog.domain.repository.EntregaRepository;
 import com.algaworks.algalog.domain.service.EntregaService;
 import com.algaworks.algalog.domain.model.Entrega;
@@ -26,28 +27,26 @@ public class EntregaController {
     @Autowired
     private EntregaService entregaService;
 
-    private ModelMapper modelMapper;
+    private EntregaMapper entregaMapper;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Entrega solicitarEntrega(@Valid @RequestBody Entrega entrega){
+    public EntregaDTO solicitarEntrega(@Valid @RequestBody Entrega entrega){
+        Entrega entregaSolicitada = entregaService.solicitar(entrega);
+        return entregaMapper.toModel(entregaSolicitada);
 
-        return entregaService.solicitar(entrega);
     }
 
     @GetMapping
-    public List<Entrega> listar(){
-        return entregaRepository.findAll();
+    public List<EntregaDTO> listarEntregas(){
+        
+        return entregaMapper.toCollectionModel(entregaRepository.findAll());
     }
 
     @GetMapping(value = "/{entregaId}")
     public ResponseEntity<EntregaDTO> buscar(@PathVariable Long id){
         return entregaRepository.findById(id)
-                .map(entrega -> {
-                    EntregaDTO entregaDTO = modelMapper.map(entrega, EntregaDTO.class);
-
-                    return ResponseEntity.ok(entregaDTO);
-                })
+                .map(entrega -> ResponseEntity.ok(entregaMapper.toModel(entrega)))
                 .orElse(ResponseEntity.notFound().build());
     }
 }
