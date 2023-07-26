@@ -1,6 +1,7 @@
 package com.algaworks.algalog.api.mapper;
 
 import com.algaworks.algalog.api.dto.EntregaDTO;
+import com.algaworks.algalog.domain.model.input.EntregaInput;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -22,5 +23,9 @@ public class EntregaMapper {
         return entregas.stream()
                 .map(this::toModel)
                 .collect(Collectors.toList());
+    }
+
+    public Entrega toEntity (EntregaInput entregaInput){
+        return modelMapper.map(entregaInput, Entrega.class);
     }
 }
