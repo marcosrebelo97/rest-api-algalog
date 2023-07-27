@@ -2,7 +2,7 @@ package com.algaworks.algalog.api.controller;
 
 import com.algaworks.algalog.api.dto.EntregaDTO;
 import com.algaworks.algalog.api.mapper.EntregaMapper;
-import com.algaworks.algalog.domain.model.input.EntregaInput;
+import com.algaworks.algalog.api.dto.input.EntregaInput;
 import com.algaworks.algalog.domain.repository.EntregaRepository;
 import com.algaworks.algalog.domain.service.EntregaService;
 import com.algaworks.algalog.domain.model.Entrega;
@@ -38,7 +38,6 @@ public class EntregaController {
 
     @GetMapping
     public List<EntregaDTO> listarEntregas(){
-
         return entregaMapper.toCollectionModel(entregaRepository.findAll());
     }
 

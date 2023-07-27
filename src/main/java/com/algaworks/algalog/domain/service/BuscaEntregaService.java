@@ -1,6 +1,6 @@
 package com.algaworks.algalog.domain.service;
 
-import com.algaworks.algalog.domain.exception.NegocioException;
+import com.algaworks.algalog.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algalog.domain.model.Entrega;
 import com.algaworks.algalog.domain.repository.EntregaRepository;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,6 @@ public class BuscaEntregaService {
 
     public Entrega buscar(Long id){
         return entregaRepository.findById(id)
-                .orElseThrow(() -> new NegocioException("Entrega não encontrada!"));
-
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Entrega não encontrada!"));
     }
 }

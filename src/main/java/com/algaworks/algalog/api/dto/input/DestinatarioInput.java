@@ -1,4 +1,4 @@
-package com.algaworks.algalog.domain.model.input;
+package com.algaworks.algalog.api.dto.input;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

@@ -1,7 +1,7 @@
 package com.algaworks.algalog.api.mapper;
 
 import com.algaworks.algalog.api.dto.EntregaDTO;
-import com.algaworks.algalog.domain.model.input.EntregaInput;
+import com.algaworks.algalog.api.dto.input.EntregaInput;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
