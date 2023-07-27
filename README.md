@@ -45,21 +45,40 @@
     |-------|----------------------| ------- |
     | GET   | Entregas - Listar    | Retorna todas as entregas cadastradas, dados de destinatários e taxa de delivery |
     | GET   | Entregas - Obter ID  | Retorna os dados de uma Entrega específica através do ID |
-    | POST  | Entregas - Solicitar |  
+    | PUT   | Entregas - Finalizar | Permite ao usuário finalizar uma Entrega, caso o seu status seja Finalizada |
+    | POST  | Entregas - Solicitar | Permite que o usuário solicite uma Entrega, adicionando os dados de Destinatário | 
     
      - #### Endpoint: ``{/entregas/{id}/ocorrencias}``
     
     | Rest  | Request                | Funcionalidade |
     |-------|------------------------| ------- |
     | GET   | Ocorrências - Listar    | Retorna os dados das Entregas que tiveram (ou não) alguma Ocorrência durante o delivery |
-    | POST  | Ocorrências - Solicitar | 
+    | POST  | Ocorrências - Solicitar | Permite ao usuário realizar uma eventual ocorrência que houve durante a Entrega |
     
     </details>
 
     #### Todos os endpoints estão disponíveis para testes, feedbacks e afins. Clique no botão abaixo para abrir no Postman.
     
     [![Run in Postman](https://run.pstmn.io/button.svg)](https://gold-eclipse-442776.postman.co/collection/19986209-8171bf70-4c4d-4b15-981b-405301adc942?source=rip_markdown)
+    
+ - ### Instruções para Executar
+  - Pré-Requisito:
+      - Java (JDK 17) </br>
+      
+    ```bash
+   
+    # Clonar repositório - SSH
+    git clone git@github.com:marcosrebelo97/rest-api-algalog.git
+    
+    # Acessar pasta do projeto back-end
+    cd rest-api-algalog
 
+    # Instalar as dependências do Maven
+    mvn install
+    
+    # Executar o projeto
+    ./mvnw spring-boot:run
+    ```
 
   ## Tecnologias Utilizadas
   - Java (JDK 17)
@@ -70,5 +89,5 @@
   - Lombok
   - Maven
   - H2 Datbase
-  - PostgreSQL
+  - PostgreSQL | DBeaver
   - Postman
