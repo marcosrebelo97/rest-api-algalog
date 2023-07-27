@@ -6,6 +6,7 @@ import com.algaworks.algalog.api.dto.input.EntregaInput;
 import com.algaworks.algalog.domain.repository.EntregaRepository;
 import com.algaworks.algalog.domain.service.EntregaService;
 import com.algaworks.algalog.domain.model.Entrega;
+import com.algaworks.algalog.domain.service.FinalizacaoEntregaService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class EntregaController {
 
     @Autowired
     private EntregaService entregaService;
+
+    @Autowired
+    private FinalizacaoEntregaService finalizacaoEntregaService;
 
     private EntregaMapper entregaMapper;
 
@@ -46,5 +50,11 @@ public class EntregaController {
         return entregaRepository.findById(id)
                 .map(entrega -> ResponseEntity.ok(entregaMapper.toModel(entrega)))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping(value = "/{id}/finalizacao")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void finalizar(@PathVariable Long id){
+        finalizacaoEntregaService.finalizar(id);
     }
 }
