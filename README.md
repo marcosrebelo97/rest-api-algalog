@@ -12,9 +12,43 @@
     ![diagrama-classe](https://github.com/marcosrebelo97/rest-api-algalog/assets/37541973/3d19948b-57e6-4e07-8f58-8516fc9363c5)
 
   - ### Postman Collection:
-    ##### Todas os endpoints estão disponíveis para testes, feedbacks e afins, clique no botão abaixo.
+    #### Todos os endpoints estão disponíveis para testes, feedbacks e afins. Clique no botão abaixo para abrir no Postman.
     
     [![Run in Postman](https://run.pstmn.io/button.svg)](https://gold-eclipse-442776.postman.co/collection/19986209-8171bf70-4c4d-4b15-981b-405301adc942?source=rip_markdown)
+
+   <details>
+
+<summary>Você também pode visualizar aqui.</summary>
+
+#### Clientes
+
+| Rest  | Request              | Funcionalidade |
+|-------|----------------------| ------- |
+| PUT   | Clientes - Atualizar | Atualiza os dados cadastrados de um Cliente |
+| POST  | Clientes - Cadastrar | Realiza o cadastro de dados de um Cliente |
+| DEL   | Clientes - Excluir   | Exclui o cadastro de um Cliente através do ID |
+| GET   | Clientes - Listar    | Retorna todos os Clientes e seus respectivos dados cadastrados na plataforma |
+| POST  | Clientes - Buscar    | Permite que o usuário pesquise por um Cliente específico através do ID |
+
+#### Entregas
+
+| Rest  | Request              | Funcionalidade |
+|-------|----------------------| ------- |
+| GET   | Entregas - Listar    | Retorna todas as entregas cadastradas, dados de destinatários e taxa de delivery |
+| GET   | Entregas - Obter ID  | Retorna os dados de uma Entrega específica através do ID |
+| POST  | Entregas - Solicitar |  
+
+#### Ocorrências
+
+| Rest  | Request                | Funcionalidade |
+|-------|------------------------| ------- |
+| GET   | Ocorrências - Listar    | Retorna os dados das Entregas que tiveram (ou não) alguma Ocorrência durante o delivery |
+| POST  | Ocorrências - Solicitar | 
+
+
+</details>
+
+    
 
   ## Tecnologias Utilizadas
   - Java (JDK 17)
