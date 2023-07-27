@@ -29,7 +29,7 @@
     <details>
     <summary>Visualizar aqui.</summary>
     
-    #### Clientes
+    #### Endpoint: ``/clientes``
     
     | Rest  | Request              | Funcionalidade |
     |-------|----------------------| ------- |
@@ -39,7 +39,7 @@
     | GET   | Clientes - Listar    | Retorna todos os Clientes e seus respectivos dados cadastrados na plataforma |
     | POST  | Clientes - Buscar    | Permite que o usuário pesquise por um Cliente específico através do ID |
     
-    #### Entregas
+    #### Endpoint: ``/entregas``
     
     | Rest  | Request              | Funcionalidade |
     |-------|----------------------| ------- |
@@ -47,7 +47,7 @@
     | GET   | Entregas - Obter ID  | Retorna os dados de uma Entrega específica através do ID |
     | POST  | Entregas - Solicitar |  
     
-    #### Ocorrências
+    #### Endpoint: ``/entregas/{id}/ocorrencias``
     
     | Rest  | Request                | Funcionalidade |
     |-------|------------------------| ------- |
