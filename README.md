@@ -1,6 +1,4 @@
 <h2 align="center"><br/> Aplicação Algalog</h2>
-    
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
   - ### Descrição:
     O projeto consiste em um sistema básico de logística, criado para gerenciamento de entregas (delivery), através do cadastro de dados de uma entrega, registro dos relacionamentos com o respectivo Cliente e Destinatário, e o controle do fluxo da entrega, por meio do status, com possibilidades de registrar o histórico de possíveis ocorrências relacionadas as entregas.
